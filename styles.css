@@ -1,0 +1,78 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+  
+.slider {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    height: calc(100vw * 16 / 10);
+}
+
+.slide {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: opacity 0.5s ease-in-out;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0; /* Hide all slides by default */
+}
+
+.slide-content {
+    position: absolute;
+    bottom: 20%;
+    left: 10%;
+    color: #fff;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* Responsive styles */
+@media (min-width: 576px) {
+    .slider {
+        /* Assuming a 4:3 aspect ratio for mobile devices */
+        height: calc(100vw * 16 / 12);
+    }
+}
+
+/* For tablet devices, you can choose an aspect ratio between 4:3 and 16:9 */
+@media (min-width: 768px) {
+    .slider {
+        /* Adjust the ratio as you see fit for tablet devices */
+        height: calc(100vw * 9 / 12);
+    }
+}
+
+@media (min-width: 1200px) {
+.slider {
+    height: calc(100vw * 7 / 16);
+}
+/* Default to 16:9 aspect ratio for desktop */
+}
+
+@media (min-width: 1440px) {
+/* Adjust styles for extra large devices */
+}
+
+@media (min-width: 1920px) {
+/* Adjust styles for extra extra large devices */
+}
+
+/* Make the first slide visible by default */
+.slide:first-child {
+    opacity: 1;
+    z-index: 1;
+}
+  
